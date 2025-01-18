@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">My Estacionamento</h1>
+
+        <!-- Login Section -->
+        <div id="login-section" class="mt-4">
+            <h3>Login</h3>
+            <form id="login-form">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" id="username" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+
+        <div id="reports-section" class="d-none mt-4">
+            <h3>Relatórios</h3>
+            <button id="export-xml" class="btn btn-info">Exportar Relatório (XML)</button>
+            <button id="export-json" class="btn btn-warning">Exportar Relatório (JSON)</button>
+        </div>        
+        
+
+        <!-- Admin Section -->
+        <div id="admin-section" class="d-none mt-4">
+            <h3>Admin Panel</h3>
+            <div class="mb-3">
+                <label for="tariff" class="form-label">Tariff</label>
+                <input type="number" id="tariff" class="form-control">
+                <button id="update-tariff" class="btn btn-success mt-2">Update Tariff</button>
+            </div>
+        </div>
+
+        <!-- Employee Section -->
+        <div id="employee-section" class="d-none mt-4">
+            <h3>Employee Panel</h3>
+            <div>
+                <button id="create-ticket" class="btn btn-success">Create Ticket</button>
+            </div>
+            <table class="table mt-3">
+                <thead>
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>Plate</th>
+                        <th>Entry</th>
+                        <th>Exit</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tickets"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
